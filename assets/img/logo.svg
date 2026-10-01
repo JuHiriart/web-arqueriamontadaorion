@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Logo provisorio: arco y flecha con el cinturón de Orión -->
+  <circle cx="32" cy="32" r="30" fill="#12162a" stroke="#c9973f" stroke-width="2"/>
+  <path d="M24 13 Q42 32 24 51" fill="none" stroke="#c9973f" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M24 13 L15 32 L24 51" fill="none" stroke="#e2bb6c" stroke-width="1.2" stroke-linejoin="round"/>
+  <path d="M15 32 H50" stroke="#f4ede1" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M49 27.5 L55 32 L49 36.5 Z" fill="#f4ede1"/>
+  <path d="M22 32 l-4 -4 M22 32 l-4 4 M18.5 32 l-3.5 -3.5 M18.5 32 l-3.5 3.5" stroke="#e2bb6c" stroke-width="1.6" stroke-linecap="round"/>
+  <g fill="#e2bb6c">
+    <circle cx="40" cy="19" r="1.8"/>
+    <circle cx="44.5" cy="16.5" r="1.8"/>
+    <circle cx="49" cy="14" r="1.8"/>
+  </g>
+</svg>

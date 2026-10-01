@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galería — Arquería Montada Orion</title>
+  <meta name="description" content="Fotos de clases, caballos y jornadas de pista de la escuela de arquería a caballo Orion.">
+  <meta property="og:title" content="Galería — Arquería Montada Orion">
+  <meta property="og:description" content="Clases, caballos y jornadas de pista.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#12162a">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.svg" alt="" width="44" height="44">
+        <span class="brand-name"><small>Arquería montada</small>Orion</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="clases.html">Clases</a></li>
+          <li><a href="galeria.html" aria-current="page">Galería</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Galería</p>
+        <h1>Momentos en el campo</h1>
+        <p>Clases, caballos y jornadas de pista. Tocá una foto para verla en grande.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="filters" role="group" aria-label="Filtrar fotos">
+          <button class="filter" type="button" data-filter="todas" aria-pressed="true">Todas</button>
+          <button class="filter" type="button" data-filter="clases" aria-pressed="false">Clases</button>
+          <button class="filter" type="button" data-filter="caballos" aria-pressed="false">Caballos</button>
+          <button class="filter" type="button" data-filter="eventos" aria-pressed="false">Eventos</button>
+        </div>
+
+        <!--
+          Para agregar o cambiar fotos: copiá un bloque <figure> y cambiá
+          - href y src por la ruta de la foto (ej. assets/img/galeria/torneo-2026.jpg)
+          - alt (descripción para lectores de pantalla) y el texto del figcaption
+          - data-category: clases | caballos | eventos
+        -->
+        <div class="gallery">
+          <figure class="gallery-item" data-category="clases">
+            <a href="assets/img/galeria/foto-01.svg"><img src="assets/img/galeria/foto-01.svg" alt="Clase de iniciación de tiro a pie" width="1200" height="800" loading="lazy"></a>
+            <figcaption>Clase de iniciación a pie</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="caballos">
+            <a href="assets/img/galeria/foto-02.svg"><img src="assets/img/galeria/foto-02.svg" alt="Caballo en el picadero" width="800" height="1000" loading="lazy"></a>
+            <figcaption>Caballo en el picadero</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="clases">
+            <a href="assets/img/galeria/foto-03.svg"><img src="assets/img/galeria/foto-03.svg" alt="Primeros tiros al paso arriba del caballo" width="1200" height="800" loading="lazy"></a>
+            <figcaption>Primeros tiros al paso</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="eventos">
+            <a href="assets/img/galeria/foto-04.svg"><img src="assets/img/galeria/foto-04.svg" alt="Torneo de primavera" width="1200" height="800" loading="lazy"></a>
+            <figcaption>Torneo de primavera</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="clases">
+            <a href="assets/img/galeria/foto-05.svg"><img src="assets/img/galeria/foto-05.svg" alt="Arcos y flechas preparados para la clase" width="1200" height="800" loading="lazy"></a>
+            <figcaption>Preparación del equipo</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="eventos">
+            <a href="assets/img/galeria/foto-06.svg"><img src="assets/img/galeria/foto-06.svg" alt="Jinete disparando al galope en la pista" width="1200" height="800" loading="lazy"></a>
+            <figcaption>Pasada al galope</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="caballos">
+            <a href="assets/img/galeria/foto-07.svg"><img src="assets/img/galeria/foto-07.svg" alt="Caballo descansando en el corral" width="800" height="1000" loading="lazy"></a>
+            <figcaption>Caballo descansando</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="clases">
+            <a href="assets/img/galeria/foto-08.svg"><img src="assets/img/galeria/foto-08.svg" alt="Grupo de alumnos con sus arcos" width="1200" height="800" loading="lazy"></a>
+            <figcaption>Grupo de alumnos</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="eventos">
+            <a href="assets/img/galeria/foto-09.svg"><img src="assets/img/galeria/foto-09.svg" alt="Blancos ubicados a lo largo de la pista" width="1200" height="800" loading="lazy"></a>
+            <figcaption>Blancos de la pista</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="caballos">
+            <a href="assets/img/galeria/foto-10.svg"><img src="assets/img/galeria/foto-10.svg" alt="Cepillado de un caballo después de la clase" width="800" height="1000" loading="lazy"></a>
+            <figcaption>Cuidado y cepillado</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="caballos">
+            <a href="assets/img/galeria/foto-11.svg"><img src="assets/img/galeria/foto-11.svg" alt="Caballos en el campo al atardecer" width="1200" height="800" loading="lazy"></a>
+            <figcaption>Atardecer en el campo</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="eventos">
+            <a href="assets/img/galeria/foto-12.svg"><img src="assets/img/galeria/foto-12.svg" alt="Entrega de premios del torneo" width="1200" height="800" loading="lazy"></a>
+            <figcaption>Entrega de premios</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Tu foto puede ser la próxima</h2>
+        <p>Vení a conocernos y sumate a una clase de prueba.</p>
+        <a class="btn btn-primary" href="contacto.html">Reservar clase de prueba</a>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Foto ampliada">
+    <button class="lightbox-btn lightbox-close" type="button" data-close aria-label="Cerrar">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <figure>
+      <img alt="">
+      <figcaption></figcaption>
+    </figure>
+    <button class="lightbox-btn lightbox-prev" type="button" data-prev aria-label="Foto anterior">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="lightbox-btn lightbox-next" type="button" data-next aria-label="Foto siguiente">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <img src="assets/img/logo.svg" alt="" width="44" height="44">
+          <span class="brand-name"><small>Arquería montada</small>Orion</span>
+        </a>
+        <p>Escuela de arquería a caballo. Clases para todos los niveles, desde tu primera flecha hasta la pista.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <h2 class="footer-title">Navegación</h2>
+        <ul class="footer-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="clases.html">Clases</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer-title">Contacto</h2>
+        <ul class="footer-links">
+          <li><a href="https://wa.me/5490000000000">WhatsApp</a></li>
+          <li><a href="mailto:contacto@ejemplo.com">contacto@ejemplo.com</a></li>
+          <li><a href="https://www.instagram.com/arqueriamontadaorion/">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year>2026</span> Arquería Montada Orion. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
