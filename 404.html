@@ -4,18 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--
-    GitHub Pages muestra esta página para cualquier ruta que no exista, así que
-    las rutas relativas se resuelven desde la raíz del sitio con <base>.
+    GitHub Pages muestra esta página en cualquier ruta inexistente, así que las
+    rutas relativas se resuelven desde la raíz del sitio con <base>.
     Si más adelante usan un dominio propio, cambiar el href a "/".
   -->
   <base href="/web-arqueriamontadaorion/">
-  <title>Página no encontrada — Arquería Montada Orion</title>
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#12162a">
-  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <title>Página no encontrada — Jinetes de Orión</title>
+  <meta name="description" content="La página que buscás no existe.">
+  <meta property="og:title" content="Página no encontrada — Jinetes de Orión">
+  <meta property="og:description" content="La página que buscás no existe.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://juhiriart.github.io/web-arqueriamontadaorion/assets/img/hero.jpg">
+  <meta name="theme-color" content="#ae8020">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script>document.documentElement.classList.add('js');</script>
   <script src="assets/js/main.js" defer></script>
@@ -24,16 +30,35 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">
-        <img src="assets/img/logo.svg" alt="" width="44" height="44">
-        <span class="brand-name"><small>Arquería montada</small>Orion</span>
+        <img src="assets/img/logo-jinetes-de-orion.png" alt="Jinetes de Orión · Arquería montada" width="197" height="205">
       </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header-tools">
+        <div class="dropdown" data-dropdown>
+          <button class="lang-btn" type="button" aria-expanded="false" aria-controls="lang-menu" data-dropdown-toggle>Idioma <span class="chev"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <ul class="dropdown-menu" id="lang-menu" aria-label="Idiomas">
+            <li><span class="lang-option is-active" lang="es">Español</span></li>
+            <li><span class="lang-option is-disabled"><span lang="en">English</span> <small>Próximamente</small></span></li>
+          </ul>
+        </div>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
       <nav class="site-nav" id="site-nav" aria-label="Principal">
         <ul>
           <li><a href="index.html">Inicio</a></li>
+          <li class="has-sub dropdown" data-dropdown>
+            <a href="nosotros.html">Nosotros</a>
+            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-nosotros" aria-label="Más secciones de Nosotros" data-dropdown-toggle><span class="chev"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+            <ul class="dropdown-menu" id="sub-nosotros">
+              <li><a href="nosotros.html#quienes-somos">Quiénes somos</a></li>
+              <li><a href="nosotros.html#mision-vision">Misión y visión</a></li>
+            </ul>
+          </li>
           <li><a href="clases.html">Clases</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="propuestas.html">Propuestas</a></li>
+          <li><a href="bienestar.html">Bienestar equino</a></li>
           <li><a href="galeria.html">Galería</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
@@ -42,22 +67,39 @@
   </header>
 
   <main id="contenido">
-    <section class="page-hero not-found">
-      <div class="container">
+    <section class="hero not-found">
+    <svg class="flag-stripes" viewBox="0 0 230 470" aria-hidden="true">
+      <polygon fill="#78b3e7" points="0,0 36,0 307,470 271,470"/>
+      <polygon fill="#ffffff" points="36,0 84,0 355,470 307,470"/>
+      <polygon fill="#78b3e7" points="84,0 120,0 391,470 355,470"/>
+      <g transform="translate(132 125)">
+        <circle r="13" fill="none" stroke="#f6b40e" stroke-width="5" stroke-dasharray="1.6 2.4"/>
+        <circle r="8" fill="#f6b40e" stroke="#c98a0a" stroke-width=".8"/>
+      </g>
+    </svg>
+      <div class="container hero-inner">
         <p class="eyebrow">Error 404</p>
-        <h1>Esta flecha no dio en el blanco</h1>
-        <p class="lead">La página que buscás no existe o cambió de lugar.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="index.html">Volver al inicio</a>
-          <a class="btn btn-ghost" href="contacto.html">Contacto</a>
-        </div>
+        <h1 class="display hero-title">Esta flecha no<br>dio en el blanco</h1>
+        <p class="hero-lead">La página que buscás no existe o cambió de lugar.</p>
+        <a class="btn-pill" href="index.html">Volver al inicio</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="index.html">
+        <img src="assets/img/logo-jinetes-de-orion.png" alt="" width="64" height="67">
+        <span><strong>Jinetes de Orión</strong>Arquería montada · Bariloche</span>
+      </a>
+      <ul class="footer-contact">
+        <li><a href="https://wa.me/5492944251674"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-3.9A8.5 8.5 0 1 1 7.6 19.3z"/><path d="M9.2 8.2c-.4 2.9 3.7 7 6.6 6.6l.6-1.6-2-1-1 1c-1.2-.5-2.3-1.6-2.8-2.8l1-1-1-2z"/></svg>+54 9 2944 251674</a></li>
+        <li><a href="https://www.instagram.com/arqueriaorion/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@arqueriaorion</a></li>
+        <li><a href="mailto:jinetesdeorion@gmail.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>jinetesdeorion@gmail.com</a></li>
+      </ul>
+    </div>
     <div class="container footer-bottom">
-      <p>© <span data-year>2026</span> Arquería Montada Orion. Todos los derechos reservados.</p>
+      <p>© <span data-year>2026</span> Jinetes de Orión · San Carlos de Bariloche, Río Negro, Argentina</p>
     </div>
   </footer>
 </body>
