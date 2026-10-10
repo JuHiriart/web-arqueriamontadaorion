@@ -2,7 +2,7 @@
 
 Sitio web de la escuela de arquería montada de San Carlos de Bariloche, publicado con GitHub Pages, en español y en inglés.
 
-**URL:** https://juhiriart.github.io/web-arqueriamontadaorion/
+**URL:** https://arqueriamontadaorion.com.ar (la dirección de GitHub, https://juhiriart.github.io/web-arqueriamontadaorion/, redirige sola al dominio)
 
 ## Cargar fotos nuevas (inicio, galería y próximas fechas)
 
@@ -106,8 +106,19 @@ git push
 
 - [ ] **Logo en alta resolución:** el archivo "Logo Blanco sin fondo.png" vino sin transparencia (es blanco sobre blanco) y no se puede usar. Mientras tanto se usa el logo extraído del Canva. Exportarlo de nuevo como PNG con fondo transparente y reemplazar `assets/img/logo-jinetes-de-orion.png`.
 
-## Dominio propio (opcional)
+## Dominio
 
-1. Configurarlo en **Settings → Pages → Custom domain**.
-2. En `404.html` cambiar `<base href="/web-arqueriamontadaorion/">` por `<base href="/">`.
-3. Actualizar las URLs de `og:image` y `hreflang` en el `<head>` de las páginas.
+`arqueriamontadaorion.com.ar` está registrado en NIC Argentina y delegado a **Cloudflare**, que maneja los DNS:
+
+| Tipo | Nombre | Contenido | Proxy |
+| --- | --- | --- | --- |
+| A | `@` | `185.199.108.153` | DNS only |
+| A | `@` | `185.199.109.153` | DNS only |
+| A | `@` | `185.199.110.153` | DNS only |
+| A | `@` | `185.199.111.153` | DNS only |
+| CNAME | `www` | `juhiriart.github.io` | DNS only |
+
+- El dominio está configurado en el repositorio en **Settings → Pages → Custom domain**, con **Enforce HTTPS** activado. Como el sitio se publica con GitHub Actions, no hace falta el archivo `CNAME`.
+- Los registros tienen que quedar en **DNS only** (nube gris): con el proxy de Cloudflare activado GitHub no puede renovar el certificado HTTPS.
+- `404.html` funciona tanto con el dominio como con la dirección de github.io.
+- Si algún día cambia el dominio, actualizar las URLs de `og:image` y `hreflang` en el `<head>` de todas las páginas.
