@@ -8,13 +8,14 @@
   <meta property="og:title" content="Jinetes de Orión — Escuela de Arquería Montada en Bariloche">
   <meta property="og:description" content="Escuela de arquería montada en San Carlos de Bariloche. Aprendé tiro con arco a caballo: tradición ecuestre, arquería histórica, deporte y naturaleza.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://juhiriart.github.io/web-arqueriamontadaorion/assets/img/hero.jpg">
+  <meta property="og:image" content="https://juhiriart.github.io/web-arqueriamontadaorion/assets/img/inicio/slide-1.jpg">
   <meta name="theme-color" content="#ae8020">
+  <link rel="alternate" hreflang="es" href="https://juhiriart.github.io/web-arqueriamontadaorion/index.html">
+  <link rel="alternate" hreflang="en" href="https://juhiriart.github.io/web-arqueriamontadaorion/en/index.html">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+  <link rel="preload" href="assets/fonts/cinzel-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
   <script>document.documentElement.classList.add('js');</script>
   <script src="assets/js/main.js" defer></script>
@@ -30,9 +31,9 @@
       <div class="header-tools">
         <div class="dropdown" data-dropdown>
           <button class="lang-btn" type="button" aria-expanded="false" aria-controls="lang-menu" data-dropdown-toggle>Idioma <span class="chev"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></span></button>
-          <ul class="dropdown-menu" id="lang-menu" aria-label="Idiomas">
-            <li><span class="lang-option is-active" lang="es">Español</span></li>
-            <li><span class="lang-option is-disabled"><span lang="en">English</span> <small>Próximamente</small></span></li>
+          <ul class="dropdown-menu" id="lang-menu">
+            <li><a class="lang-option is-active" href="index.html" hreflang="es" lang="es" aria-current="true">Español</a></li>
+            <li><a class="lang-option" href="en/index.html" hreflang="en" lang="en">English</a></li>
           </ul>
         </div>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
@@ -42,14 +43,7 @@
       <nav class="site-nav" id="site-nav" aria-label="Principal">
         <ul>
           <li><a href="index.html" aria-current="page">Inicio</a></li>
-          <li class="has-sub dropdown" data-dropdown>
-            <a href="nosotros.html">Nosotros</a>
-            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-nosotros" aria-label="Más secciones de Nosotros" data-dropdown-toggle><span class="chev"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></span></button>
-            <ul class="dropdown-menu" id="sub-nosotros">
-              <li><a href="nosotros.html#quienes-somos">Quiénes somos</a></li>
-              <li><a href="nosotros.html#mision-vision">Misión y visión</a></li>
-            </ul>
-          </li>
+          <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="clases.html">Clases</a></li>
           <li><a href="eventos.html">Eventos</a></li>
           <li><a href="propuestas.html">Propuestas</a></li>
@@ -72,39 +66,184 @@
         <circle r="8" fill="#f6b40e" stroke="#c98a0a" stroke-width=".8"/>
       </g>
     </svg>
-      <div class="container hero-inner">
-        <p class="eyebrow"><a href="nosotros.html">Jinetes de Orion - Bariloche</a></p>
-        <h1 class="display hero-title">Escuela de<br>arquería montada</h1>
-        <p class="hero-lead">Aprendé <strong>tiro con arco a caballo</strong>, una modalidad única y apasionante, que une tradición ecuestre, arquería histórica, deporte y conexión con la naturaleza.</p>
+      <div class="container">
+        <p class="kicker">Jinetes de Orión · Bariloche</p>
+        <h1 class="title title--hero">Escuela de<br>arquería montada</h1>
+        <p class="lead">Aprendé <strong>tiro con arco a caballo</strong>, una modalidad única y apasionante, que une tradición ecuestre, arquería histórica, deporte y conexión con la naturaleza.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://wa.me/5492944251674?text=Hola!%20Quiero%20reservar%20una%20clase%20de%20arquer%C3%ADa%20montada."><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-3.9A8.5 8.5 0 1 1 7.6 19.3z"/><path d="M9.2 8.2c-.4 2.9 3.7 7 6.6 6.6l.6-1.6-2-1-1 1c-1.2-.5-2.3-1.6-2.8-2.8l1-1-1-2z"/></svg>Reservá tu clase</a>
+          <a class="btn btn-outline" href="clases.html">Conocé las clases</a>
+        </div>
       </div>
     </section>
 
-    <div class="photo-band">
-      <img src="assets/img/hero.jpg" alt="Jinete con casco tensando el arco sobre su caballo en el bosque" width="2000" height="1333" fetchpriority="high">
-    </div>
+    <!-- Las fotos se cargan solas desde la carpeta assets/img/inicio/ (ver README) -->
+    <section class="slideshow is-loading" data-slideshow="inicio" aria-roledescription="carrusel" aria-label="Fotos de Jinetes de Orión">
+      <div data-slides></div>
+      <div class="slideshow-controls">
+        <div class="slideshow-dots" data-slide-dots></div>
+        <button class="round-btn" type="button" data-slide-prev aria-label="Foto anterior"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button class="round-btn" type="button" data-slide-next aria-label="Foto siguiente"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <button class="round-btn slide-pause" type="button" data-slide-pause aria-label="Pausar presentación" aria-pressed="false"><svg class="icon i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><svg class="icon i-play" viewBox="0 0 24 24" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4"/></svg></button>
+      </div>
+    </section>
 
     <section class="gold-band history">
+      <div class="container history-grid">
+        <div>
+          <p class="kicker kicker--light">La disciplina</p>
+          <h2 class="title title--section title--light">Una tradición de más de 5000 años</h2>
+        </div>
+        <div>
+          <p>Se han encontrado registros que datan el origen de la arquería montada hace más de 5000 años. Fue en las estepas euroasiáticas donde ocurrió la comunión entre el arco, el ser humano y el caballo. El desarrollo de esta destreza combinada permitió como nunca la expansión de los pueblos y constituyó una herramienta fundamental para la supervivencia durante muchos siglos.</p>
+          <p>Hoy en día se recuperaron aquellas tradiciones comunes a tantas culturas en el mundo y es posible practicar la arquería montada a nivel deportivo en más de 50 países. En Jinetes de Orión brindamos clases adaptadas a tu nivel para que logres tu objetivo mientras disfrutás cada etapa del camino.</p>
+          <div class="actions">
+            <a class="btn btn-light" href="https://wa.me/5492944251674?text=Hola!%20Quiero%20reservar%20una%20clase%20de%20arquer%C3%ADa%20montada."><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-3.9A8.5 8.5 0 1 1 7.6 19.3z"/><path d="M9.2 8.2c-.4 2.9 3.7 7 6.6 6.6l.6-1.6-2-1-1 1c-1.2-.5-2.3-1.6-2.8-2.8l1-1-1-2z"/></svg>Reservá tu clase</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="container">
-        <p>Se han encontrado registros que datan el origen de la arquería montada hace más de 5000 años. Fue en las estepas euroasiáticas donde ocurrió la comunión entre el arco, el ser humano y el caballo. El desarrollo de esta destreza combinada permitió como nunca la expansión de los pueblos y constituyó una herramienta fundamental para la supervivencia durante muchos siglos. Hoy en día se recuperaron aquellas tradiciones comunes a tantas culturas en el mundo y es posible practicar la arquería montada a nivel deportivo en más de 50 países. En Jinetes de Orión brindamos clases adaptadas a tu nivel para que logres tu objetivo mientras disfrutás cada etapa del camino.</p>
-        <a class="btn-pill" href="https://wa.me/5492944251674?text=Hola!%20Quiero%20reservar%20una%20clase%20de%20arquer%C3%ADa%20montada.">Reservá tu clase</a>
+        <div class="section-head">
+          <p class="kicker">La escuela</p>
+          <h2 class="title title--section">Conocé Jinetes de Orión</h2>
+          <p class="muted">Formación integral en arquería y equitación, en el entorno natural de Bariloche.</p>
+        </div>
+        <div class="cards">
+          <a class="card" href="nosotros.html">
+            <img src="assets/img/nosotros-historia.jpg" alt="" width="1400" height="933" loading="lazy">
+            <div class="card-body">
+              <h3 class="title title--card">Nosotros</h3>
+              <p>Enseñamos arquería montada con fines deportivos, culturales y de desarrollo personal.</p>
+              <span class="text-link">Ver más <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            </div>
+          </a>
+          <a class="card" href="clases.html">
+            <img src="assets/img/clases-modalidades.jpg" alt="" width="1053" height="1400" loading="lazy">
+            <div class="card-body">
+              <h3 class="title title--card">Clases</h3>
+              <p>Dos instructores por clase. Regulares martes, jueves y sábados, e intensivas a coordinar.</p>
+              <span class="text-link">Ver más <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            </div>
+          </a>
+          <a class="card" href="propuestas.html">
+            <img src="assets/img/propuesta-cultural.jpg" alt="" width="1400" height="933" loading="lazy">
+            <div class="card-body">
+              <h3 class="title title--card">Propuestas</h3>
+              <p>Clínica deportiva, desarrollo personal y experiencia cultural en el bosque patagónico.</p>
+              <span class="text-link">Ver más <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            </div>
+          </a>
+          <a class="card" href="bienestar.html">
+            <img src="assets/img/bienestar.jpg" alt="" width="1050" height="1400" loading="lazy">
+            <div class="card-body">
+              <h3 class="title title--card">Bienestar equino</h3>
+              <p>El bienestar del caballo es una condición fundamental para practicar.</p>
+              <span class="text-link">Ver más <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white">
+      <div class="container">
+        <div class="section-head section-head--row">
+          <div>
+            <p class="kicker">Agenda</p>
+            <h2 class="title title--section">Próximas fechas</h2>
+          </div>
+          <a class="text-link" href="eventos.html">Ver todas las fechas <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+        <div data-fotos-bloque>
+          <div class="carousel carousel--flyers" data-carousel data-lightbox-group>
+            <button class="round-btn carousel-btn carousel-prev" type="button" aria-label="Anterior" data-carousel-prev hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <div class="carousel-track is-loading" data-carousel-track data-fotos="eventos" data-clase="carousel-item" role="region" aria-label="Flyers de próximas fechas" tabindex="0"></div>
+            <button class="round-btn carousel-btn carousel-next" type="button" aria-label="Siguiente" data-carousel-next hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+          </div>
+          <p class="empty-state" data-fotos-vacio hidden>Pronto vamos a publicar nuevas fechas. Seguinos en <a href="https://www.instagram.com/arqueriaorion/">Instagram</a>.</p>
+        <noscript><p class="empty-state">Activá JavaScript para ver las fotos, o miralas en <a href="https://www.instagram.com/arqueriaorion/">Instagram</a>.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint">
+      <div class="container">
+        <div class="section-head section-head--row">
+          <div>
+            <p class="kicker">Galería</p>
+            <h2 class="title title--section">Momentos en el campo</h2>
+          </div>
+          <a class="text-link" href="galeria.html">Ver galería completa <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+        <div data-fotos-bloque>
+          <div class="carousel carousel--photos" data-carousel data-lightbox-group>
+            <button class="round-btn carousel-btn carousel-prev" type="button" aria-label="Anterior" data-carousel-prev hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <div class="carousel-track is-loading" data-carousel-track data-fotos="galeria" data-clase="carousel-item" data-cantidad="12" data-aleatorio role="region" aria-label="Fotos de clases y encuentros" tabindex="0"></div>
+            <button class="round-btn carousel-btn carousel-next" type="button" aria-label="Siguiente" data-carousel-next hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+          </div>
+          <p class="empty-state" data-fotos-vacio hidden>Pronto vamos a sumar fotos. Mientras tanto, miralas en <a href="https://www.instagram.com/arqueriaorion/">Instagram</a>.</p>
+        <noscript><p class="empty-state">Activá JavaScript para ver las fotos, o miralas en <a href="https://www.instagram.com/arqueriaorion/">Instagram</a>.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="gold-band cta-band">
+      <div class="container cta-inner">
+        <div>
+          <h2 class="title title--light">Conectate con nosotros</h2>
+          <p>Escribinos para reservar tu clase o consultar por las próximas fechas.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-light" href="https://wa.me/5492944251674?text=Hola!%20Quiero%20reservar%20una%20clase%20de%20arquer%C3%ADa%20montada."><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-3.9A8.5 8.5 0 1 1 7.6 19.3z"/><path d="M9.2 8.2c-.4 2.9 3.7 7 6.6 6.6l.6-1.6-2-1-1 1c-1.2-.5-2.3-1.6-2.8-2.8l1-1-1-2z"/></svg>Reservá tu clase</a>
+          <a class="btn btn-ghost-light" href="contacto.html">Contacto</a>
+        </div>
       </div>
     </section>
   </main>
 
+  <dialog class="lightbox" id="lightbox" aria-label="Imagen ampliada">
+    <button class="round-btn lightbox-close" type="button" data-close aria-label="Cerrar"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <figure>
+      <img alt="">
+      <figcaption></figcaption>
+    </figure>
+    <button class="round-btn lightbox-prev" type="button" data-prev aria-label="Anterior"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <button class="round-btn lightbox-next" type="button" data-next aria-label="Siguiente"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+  </dialog>
+
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <a class="footer-brand" href="index.html">
-        <img src="assets/img/logo-jinetes-de-orion.png" alt="" width="64" height="67">
-        <span><strong>Jinetes de Orión</strong>Arquería montada · Bariloche</span>
-      </a>
-      <ul class="footer-contact">
-        <li><a href="https://wa.me/5492944251674"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-3.9A8.5 8.5 0 1 1 7.6 19.3z"/><path d="M9.2 8.2c-.4 2.9 3.7 7 6.6 6.6l.6-1.6-2-1-1 1c-1.2-.5-2.3-1.6-2.8-2.8l1-1-1-2z"/></svg>+54 9 2944 251674</a></li>
-        <li><a href="https://www.instagram.com/arqueriaorion/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@arqueriaorion</a></li>
-        <li><a href="mailto:jinetesdeorion@gmail.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>jinetesdeorion@gmail.com</a></li>
-      </ul>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo-jinetes-de-orion.png" alt="Jinetes de Orión" width="84" height="87" loading="lazy">
+        <p>Escuela de arquería montada en San Carlos de Bariloche, Río Negro, Argentina.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <h2 class="footer-title">Secciones</h2>
+        <ul class="footer-links footer-links--cols">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="clases.html">Clases</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="propuestas.html">Propuestas</a></li>
+          <li><a href="bienestar.html">Bienestar equino</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer-title">Contacto</h2>
+        <ul class="footer-links">
+          <li><a href="https://wa.me/5492944251674"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-3.9A8.5 8.5 0 1 1 7.6 19.3z"/><path d="M9.2 8.2c-.4 2.9 3.7 7 6.6 6.6l.6-1.6-2-1-1 1c-1.2-.5-2.3-1.6-2.8-2.8l1-1-1-2z"/></svg>+54 9 2944 251674</a></li>
+          <li><a href="https://www.instagram.com/arqueriaorion/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@arqueriaorion</a></li>
+          <li><a href="mailto:jinetesdeorion@gmail.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>jinetesdeorion@gmail.com</a></li>
+        </ul>
+      </div>
     </div>
     <div class="container footer-bottom">
-      <p>© <span data-year>2026</span> Jinetes de Orión · San Carlos de Bariloche, Río Negro, Argentina</p>
+      <p>© <span data-year>2026</span> Jinetes de Orión · Arquería montada</p>
     </div>
   </footer>
 </body>

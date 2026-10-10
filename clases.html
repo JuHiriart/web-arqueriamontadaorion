@@ -8,13 +8,14 @@
   <meta property="og:title" content="Clases — Jinetes de Orión">
   <meta property="og:description" content="Clases de arquería montada en Bariloche: arquería, equitación, clases regulares e intensivas.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://juhiriart.github.io/web-arqueriamontadaorion/assets/img/hero.jpg">
+  <meta property="og:image" content="https://juhiriart.github.io/web-arqueriamontadaorion/assets/img/inicio/slide-1.jpg">
   <meta name="theme-color" content="#ae8020">
+  <link rel="alternate" hreflang="es" href="https://juhiriart.github.io/web-arqueriamontadaorion/clases.html">
+  <link rel="alternate" hreflang="en" href="https://juhiriart.github.io/web-arqueriamontadaorion/en/lessons.html">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+  <link rel="preload" href="assets/fonts/cinzel-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
   <script>document.documentElement.classList.add('js');</script>
   <script src="assets/js/main.js" defer></script>
@@ -30,9 +31,9 @@
       <div class="header-tools">
         <div class="dropdown" data-dropdown>
           <button class="lang-btn" type="button" aria-expanded="false" aria-controls="lang-menu" data-dropdown-toggle>Idioma <span class="chev"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></span></button>
-          <ul class="dropdown-menu" id="lang-menu" aria-label="Idiomas">
-            <li><span class="lang-option is-active" lang="es">Español</span></li>
-            <li><span class="lang-option is-disabled"><span lang="en">English</span> <small>Próximamente</small></span></li>
+          <ul class="dropdown-menu" id="lang-menu">
+            <li><a class="lang-option is-active" href="clases.html" hreflang="es" lang="es" aria-current="true">Español</a></li>
+            <li><a class="lang-option" href="en/lessons.html" hreflang="en" lang="en">English</a></li>
           </ul>
         </div>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
@@ -42,14 +43,7 @@
       <nav class="site-nav" id="site-nav" aria-label="Principal">
         <ul>
           <li><a href="index.html">Inicio</a></li>
-          <li class="has-sub dropdown" data-dropdown>
-            <a href="nosotros.html">Nosotros</a>
-            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-nosotros" aria-label="Más secciones de Nosotros" data-dropdown-toggle><span class="chev"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></span></button>
-            <ul class="dropdown-menu" id="sub-nosotros">
-              <li><a href="nosotros.html#quienes-somos">Quiénes somos</a></li>
-              <li><a href="nosotros.html#mision-vision">Misión y visión</a></li>
-            </ul>
-          </li>
+          <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="clases.html" aria-current="page">Clases</a></li>
           <li><a href="eventos.html">Eventos</a></li>
           <li><a href="propuestas.html">Propuestas</a></li>
@@ -62,48 +56,108 @@
   </header>
 
   <main id="contenido">
-    <section class="gold-band">
-      <div class="clases-grid">
-        <div class="clases-intro">
-          <h1 class="display display--pale">Clases</h1>
-          <p class="lead-bold">Cada clase cuenta con dos instructores y tiene como objetivo desarrollar un conocimiento amplio de la arquería y sus diferentes tradiciones, adquirir herramientas para montar y guiar al caballo con seguridad y confianza e integrar de manera natural ambos saberes.</p>
+    <section class="page-hero">
+    <svg class="flag-stripes" viewBox="0 0 230 470" aria-hidden="true">
+      <polygon fill="#78b3e7" points="0,0 36,0 307,470 271,470"/>
+      <polygon fill="#ffffff" points="36,0 84,0 355,470 307,470"/>
+      <polygon fill="#78b3e7" points="84,0 120,0 391,470 355,470"/>
+      <g transform="translate(132 125)">
+        <circle r="13" fill="none" stroke="#f6b40e" stroke-width="5" stroke-dasharray="1.6 2.4"/>
+        <circle r="8" fill="#f6b40e" stroke="#c98a0a" stroke-width=".8"/>
+      </g>
+    </svg>
+      <div class="container">
+        <p class="kicker">Formación</p>
+        <h1 class="title title--page">Clases</h1>
+        <p class="lead">Cada clase cuenta con dos instructores y tiene como objetivo desarrollar un conocimiento amplio de la arquería y sus diferentes tradiciones, adquirir herramientas para montar y guiar al caballo con seguridad y confianza e integrar de manera natural ambos saberes.</p>
+      </div>
+    </section>
 
-          <h2 class="subhead">Modalidades</h2>
-          <p><strong>Clases regulares:</strong> Martes y Jueves 18 a 20 hs - Sábados 14 a 16:30 hs</p>
-          <p><strong>Clases intensivas:</strong> Programas de uno o más días, a coordinar. Ideal para quienes visitan la ciudad y quieren vivir la experiencia.</p>
+    <section class="section">
+      <div class="container two-col">
+        <article class="discipline">
+          <img src="assets/img/clases-arqueria.jpg" alt="Tiro con arco a pie hacia los blancos" width="1400" height="1018">
+          <div class="discipline-body">
+            <h2 class="title title--section">Arquería</h2>
+            <h3>Historia y tradiciones</h3>
+            <p>Recorrido por la evolución de la arquería y sus diferentes estilos y usos, con especial atención a las tradiciones orientales: turca, china, manchú y coreana, además de la arquería montada deportiva moderna.</p>
+            <h3>Práctica</h3>
+            <p>Desarrollo de la carga rápida, disparo instintivo y fluido en movimiento, adaptación de distintas técnicas buscando estabilidad y precisión.</p>
+          </div>
+        </article>
+        <article class="discipline">
+          <img src="assets/img/clases-equitacion.jpg" alt="Jinete montando un caballo alazán en el picadero" width="1400" height="933">
+          <div class="discipline-body">
+            <h2 class="title title--section">Equitación</h2>
+            <h3>Etología</h3>
+            <p>Comprender al caballo, su comportamiento y estados para relacionarnos con él desde el respeto y la asertividad. Aspectos de cuidado general, montura, biomecánica, preparación previa, alimentación y todo lo que hace a la salud equina.</p>
+            <h3>Práctica</h3>
+            <p>Monta a pelo y con montura, desarrollo progresivo de los tres aires y técnicas específicas de arquería montada.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="gold-band section" id="modalidades">
+      <div class="container split">
+        <div>
+          <p class="kicker kicker--light">Modalidades</p>
+          <h2 class="title title--section title--light">Elegí cómo entrenar</h2>
+          <ul class="mod-list">
+            <li class="mod-item">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <div>
+                <h3>Clases regulares</h3>
+                <p>Martes y jueves de 18 a 20 hs<br>Sábados de 14 a 16:30 hs</p>
+              </div>
+            </li>
+            <li class="mod-item">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div>
+                <h3>Clases intensivas</h3>
+                <p>Programas de uno o más días, a coordinar. Ideal para quienes visitan la ciudad y quieren vivir la experiencia.</p>
+              </div>
+            </li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-light" href="https://wa.me/5492944251674?text=Hola!%20Quiero%20reservar%20una%20clase%20de%20arquer%C3%ADa%20montada."><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-3.9A8.5 8.5 0 1 1 7.6 19.3z"/><path d="M9.2 8.2c-.4 2.9 3.7 7 6.6 6.6l.6-1.6-2-1-1 1c-1.2-.5-2.3-1.6-2.8-2.8l1-1-1-2z"/></svg>Reservá tu clase</a>
+          </div>
         </div>
-
-        <div class="clases-detail">
-          <h2 class="subhead">Arquería</h2>
-          <p><strong>Historia y tradiciones:</strong><br>Recorrido por la evolución de la arquería y sus diferentes estilos y usos, con especial atención a las tradiciones orientales: turca, china, manchú y coreana, además de la arquería montada deportiva moderna.</p>
-          <p><strong>Práctica:</strong><br>Desarrollo de la carga rápida, disparo instintivo y fluido en movimiento, adaptación de distintas técnicas buscando estabilidad y precisión.</p>
-
-          <h2 class="subhead">Equitación</h2>
-          <p><strong>Etología:</strong><br>Comprender al caballo, su comportamiento y estados para relacionarnos con él desde el respeto y la asertividad. Aspectos de cuidado general, montura, biomecánica, preparación previa, alimentación y todo lo que hace a la salud equina.</p>
-          <p><strong>Práctica:</strong><br>Monta a pelo y con montura, desarrollo progresivo de los tres aires y técnicas específicas de arquería montada.</p>
-        </div>
-
-        <div class="clases-photo">
-          <img src="assets/img/clases.jpg" alt="Jinete con casco llevando flechas de plumas rojas en la aljaba" width="843" height="1120">
-        </div>
+        <img class="photo photo--tall" src="assets/img/clases-modalidades.jpg" alt="Jinete con casco llevando flechas de plumas rojas en la aljaba" width="1053" height="1400" loading="lazy" style="object-position: 50% 25%">
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <a class="footer-brand" href="index.html">
-        <img src="assets/img/logo-jinetes-de-orion.png" alt="" width="64" height="67">
-        <span><strong>Jinetes de Orión</strong>Arquería montada · Bariloche</span>
-      </a>
-      <ul class="footer-contact">
-        <li><a href="https://wa.me/5492944251674"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-3.9A8.5 8.5 0 1 1 7.6 19.3z"/><path d="M9.2 8.2c-.4 2.9 3.7 7 6.6 6.6l.6-1.6-2-1-1 1c-1.2-.5-2.3-1.6-2.8-2.8l1-1-1-2z"/></svg>+54 9 2944 251674</a></li>
-        <li><a href="https://www.instagram.com/arqueriaorion/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@arqueriaorion</a></li>
-        <li><a href="mailto:jinetesdeorion@gmail.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>jinetesdeorion@gmail.com</a></li>
-      </ul>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo-jinetes-de-orion.png" alt="Jinetes de Orión" width="84" height="87" loading="lazy">
+        <p>Escuela de arquería montada en San Carlos de Bariloche, Río Negro, Argentina.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <h2 class="footer-title">Secciones</h2>
+        <ul class="footer-links footer-links--cols">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="clases.html">Clases</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="propuestas.html">Propuestas</a></li>
+          <li><a href="bienestar.html">Bienestar equino</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer-title">Contacto</h2>
+        <ul class="footer-links">
+          <li><a href="https://wa.me/5492944251674"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-3.9A8.5 8.5 0 1 1 7.6 19.3z"/><path d="M9.2 8.2c-.4 2.9 3.7 7 6.6 6.6l.6-1.6-2-1-1 1c-1.2-.5-2.3-1.6-2.8-2.8l1-1-1-2z"/></svg>+54 9 2944 251674</a></li>
+          <li><a href="https://www.instagram.com/arqueriaorion/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@arqueriaorion</a></li>
+          <li><a href="mailto:jinetesdeorion@gmail.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>jinetesdeorion@gmail.com</a></li>
+        </ul>
+      </div>
     </div>
     <div class="container footer-bottom">
-      <p>© <span data-year>2026</span> Jinetes de Orión · San Carlos de Bariloche, Río Negro, Argentina</p>
+      <p>© <span data-year>2026</span> Jinetes de Orión · Arquería montada</p>
     </div>
   </footer>
 </body>

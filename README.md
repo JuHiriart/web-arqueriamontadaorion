@@ -1,83 +1,113 @@
 # Jinetes de Orión — Escuela de Arquería Montada
 
-Sitio web de la escuela de arquería montada de San Carlos de Bariloche, publicado con GitHub Pages.
-El diseño replica el que está hecho en Canva.
+Sitio web de la escuela de arquería montada de San Carlos de Bariloche, publicado con GitHub Pages, en español y en inglés.
 
 **URL:** https://juhiriart.github.io/web-arqueriamontadaorion/
 
-Es un sitio estático (HTML + CSS + JS, sin frameworks ni build): lo que está en el repo es exactamente lo que se publica.
+## Cargar fotos nuevas (inicio, galería y próximas fechas)
+
+Estas fotos se cargan solas desde su carpeta. No hace falta tocar ningún HTML.
+
+| Qué | Carpeta |
+| --- | --- |
+| Slideshow del inicio | `assets/img/inicio/` |
+| Galería | `assets/img/galeria/` |
+| Próximas fechas (flyers) | `assets/img/eventos/` |
+
+1. Copiá la foto en la carpeta (también se puede hacer desde la web de GitHub: entrar a la carpeta → **Add file → Upload files**).
+2. Subí los cambios a `main`. En uno o dos minutos aparece en el sitio.
+
+Para sacar una foto, borrala de la carpeta (y su `.txt`, si tiene).
+
+### Descripciones de las fotos
+
+Cada foto puede tener un archivo de texto **con el mismo nombre** al lado:
+
+```
+assets/img/eventos/2-cordoba-curso-inicial.jpg
+assets/img/eventos/2-cordoba-curso-inicial.txt      ← descripción en español
+assets/img/eventos/2-cordoba-curso-inicial.en.txt   ← descripción en inglés (opcional)
+```
+
+- **Inicio:** el texto aparece como leyenda sobre la foto ("Tiro con arco a caballo en el bosque").
+- **Galería y eventos:** el texto se lee en el visor ampliado y lo usan los lectores de pantalla.
+- Si no hay `.txt`, la foto igual aparece: sin leyenda y con una descripción genérica ("Foto de Jinetes de Orión 12").
+- Se editan con cualquier editor de texto (Bloc de notas, VS Code). Guardar en UTF-8 para que salgan bien las tildes.
+
+### Otros detalles
+
+- **Orden:** se muestran por nombre de archivo (`1-...`, `2-...`, etc.). Para los flyers conviene numerarlos en el orden de las fechas, por ejemplo `1-pucon.jpg`, `2-cordoba.jpg`.
+- **Tamaño:** no hace falta achicar las fotos. Al publicar, las muy grandes se reducen solas y se generan miniaturas livianas. Igual, cuanto más livianas se suban, más rápido se ve todo. Para el inicio conviene usar fotos horizontales.
+- **Formatos:** `.jpg`, `.png` o `.webp`.
+- **El inicio** muestra además 12 fotos de la galería elegidas al azar y todos los flyers.
 
 ## Estructura
 
 ```
-├── index.html          Inicio: título, foto principal, historia y "Reservá tu clase"
-├── nosotros.html       Quiénes somos, misión y visión
-├── clases.html         Arquería, equitación y modalidades (horarios)
-├── eventos.html        Próximas fechas (carrusel de flyers)
-├── propuestas.html     Clínica deportiva, desarrollo personal y experiencia cultural
-├── bienestar.html      Bienestar equino + link al manifiesto (PDF)
-├── galeria.html        Galería de fotos con visor
-├── contacto.html       Conectate con nosotros
-├── 404.html            Página de error para rutas inexistentes
+├── index.html, nosotros.html, clases.html, eventos.html,
+│   propuestas.html, bienestar.html, galeria.html, contacto.html   Páginas en español
+├── en/                     Las mismas páginas en inglés
+├── 404.html                Página de error para rutas inexistentes
 ├── assets/
-│   ├── css/styles.css  Estilos (colores y fuentes al principio del archivo)
-│   ├── js/main.js      Menú móvil, desplegables, carrusel y visor de fotos
+│   ├── css/styles.css      Estilos (colores, tamaños de letra y espaciados al principio)
+│   ├── js/main.js          Menú, carruseles, visor y carga de fotos desde carpetas
+│   ├── docs/               Manifiesto de Bienestar Equino (PDF)
+│   ├── fonts/              Cinzel (títulos) y Lato (texto), licencia SIL OFL
 │   └── img/
-│       ├── logo-jinetes-de-orion.png, favicon.png, apple-touch-icon.png
-│       ├── hero.jpg, nosotros-*.jpg, clases.jpg, bienestar.jpg, grupo.jpg
-│       ├── eventos/    Flyers de próximas fechas
-│       └── galeria/    Fotos de la galería (foto-01.jpg … foto-10.jpg)
-└── .nojekyll           Le indica a GitHub Pages que sirva los archivos tal cual
+│       ├── inicio/         ← fotos del slideshow del inicio (se cargan solas)
+│       ├── galeria/        ← fotos de la galería (se cargan solas)
+│       ├── eventos/        ← flyers de próximas fechas (se cargan solos)
+│       └── ...             Fotos fijas de cada sección, logo y favicon
+├── scripts/preparar_imagenes.py   Arma las listas de fotos al publicar
+└── .github/workflows/publicar.yml Publica el sitio en cada push a main
 ```
 
 ## Ver el sitio en la compu
 
-- Rápido: doble clic en `index.html`.
-- Con servidor local (más parecido a GitHub Pages): desde esta carpeta correr
-  `python -m http.server 8000` y abrir http://localhost:8000
-- En VS Code también sirve la extensión **Live Server**.
+Las fotos de la galería y de eventos necesitan un servidor local (abriendo el HTML con doble clic no se pueden leer las carpetas). Desde esta carpeta:
+
+```
+python -m http.server 8000
+```
+
+y abrir http://localhost:8000. Lo que se agregue a las carpetas aparece al recargar la página. En VS Code también sirve la extensión **Live Server**.
 
 ## Publicar en GitHub Pages
 
-1. Subir los cambios a la rama `main`:
-   ```
-   git add .
-   git commit -m "Sitio con el diseño de Canva"
-   git push -u origin main
-   ```
-2. En GitHub: **Settings → Pages → Build and deployment**
-   - Source: **Deploy from a branch**
-   - Branch: **main** / **(root)** → **Save**
-3. En uno o dos minutos el sitio queda online en la URL de arriba. Cada `push` a `main` lo actualiza solo.
+**Una sola vez:** en GitHub, **Settings → Pages → Build and deployment → Source: "GitHub Actions"**.
+
+Después, cada `push` a `main` publica el sitio solo (se puede ver el progreso en la pestaña **Actions**):
+
+```
+git add .
+git commit -m "Describir el cambio"
+git push
+```
+
+## Cambiar textos
+
+- Los textos están en cada HTML, dentro de `<main>`. **Cada página existe en español (raíz) y en inglés (`en/`)**: si se cambia un texto, hay que cambiarlo en las dos.
+
+  | Español | Inglés |
+  | --- | --- |
+  | `index.html` | `en/index.html` |
+  | `nosotros.html` | `en/about.html` |
+  | `clases.html` | `en/lessons.html` |
+  | `eventos.html` | `en/events.html` |
+  | `propuestas.html` | `en/proposals.html` |
+  | `bienestar.html` | `en/equine-welfare.html` |
+  | `galeria.html` | `en/gallery.html` |
+  | `contacto.html` | `en/contact.html` |
+
+- Los datos de contacto también están en el footer de **todas** las páginas.
+- **Tipografías:** se cambian al principio de `assets/css/styles.css` (`--font` para el texto y `--font-display` para los títulos).
 
 ## Pendientes
 
-- [ ] **Manifiesto de Bienestar Equino:** subir el PDF como `assets/docs/manifiesto-bienestar-equino.pdf` (el link de `bienestar.html` ya apunta ahí; hasta entonces da error).
-- [ ] **Fotos en mejor calidad:** las imágenes salieron del PDF de Canva y algunas de la galería son chicas (300–400 px). Si se reemplazan por los originales, mantener el mismo nombre de archivo y no hace falta tocar el HTML.
-- [ ] **Logo en alta resolución:** idealmente un PNG o SVG de al menos 600 px para `assets/img/logo-jinetes-de-orion.png`.
-- [ ] **Idioma:** el selector se ve, pero por ahora solo hay español (inglés figura como "Próximamente").
-- [ ] **Próximas fechas:** los flyers son de noviembre; actualizarlos cuando pasen las fechas.
-
-## Cambiar contenido
-
-- **Textos:** están directamente en cada HTML, dentro de `<main>`.
-- **Flyers de eventos:** en `eventos.html`, cada flyer es un bloque `<figure class="carousel-item">`. Para sumar uno, copiar un bloque y cambiar la imagen, el `alt` (descripción del flyer) y el `figcaption`. Si hay más de los que entran en pantalla, aparecen las flechas del carrusel.
-- **Fotos de la galería:** en `galeria.html`, un bloque `<figure class="gallery-item">` por foto.
-- **Datos de contacto:** están en `contacto.html` y en el footer de **cada** página.
-
-## Agregar una página nueva
-
-1. Duplicar una página existente (por ejemplo `propuestas.html`) y renombrarla.
-2. Cambiar `<title>`, la `description` y el contenido dentro de `<main>`.
-3. En el menú, mover `aria-current="page"` al link de la página nueva.
-4. Agregar el link en el menú de **todas** las páginas (y en `404.html`).
-
-> El header y el footer están repetidos en cada HTML a propósito: así el sitio funciona abriendo los archivos directamente, sin servidor ni herramientas extra.
+- [ ] **Logo en alta resolución:** el archivo "Logo Blanco sin fondo.png" vino sin transparencia (es blanco sobre blanco) y no se puede usar. Mientras tanto se usa el logo extraído del Canva. Exportarlo de nuevo como PNG con fondo transparente y reemplazar `assets/img/logo-jinetes-de-orion.png`.
 
 ## Dominio propio (opcional)
 
-Si más adelante se usa un dominio (ej. `jinetesdeorion.com.ar`):
-
-1. Configurarlo en **Settings → Pages → Custom domain** (GitHub crea el archivo `CNAME`).
+1. Configurarlo en **Settings → Pages → Custom domain**.
 2. En `404.html` cambiar `<base href="/web-arqueriamontadaorion/">` por `<base href="/">`.
-3. Actualizar la URL de `og:image` en el `<head>` de las páginas (es la imagen que aparece al compartir el link por WhatsApp o redes).
+3. Actualizar las URLs de `og:image` y `hreflang` en el `<head>` de las páginas.

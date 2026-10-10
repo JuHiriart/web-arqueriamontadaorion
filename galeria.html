@@ -8,13 +8,14 @@
   <meta property="og:title" content="Galería — Jinetes de Orión">
   <meta property="og:description" content="Fotos de clases, jinetes y caballos de Jinetes de Orión, arquería montada en Bariloche.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://juhiriart.github.io/web-arqueriamontadaorion/assets/img/hero.jpg">
+  <meta property="og:image" content="https://juhiriart.github.io/web-arqueriamontadaorion/assets/img/inicio/slide-1.jpg">
   <meta name="theme-color" content="#ae8020">
+  <link rel="alternate" hreflang="es" href="https://juhiriart.github.io/web-arqueriamontadaorion/galeria.html">
+  <link rel="alternate" hreflang="en" href="https://juhiriart.github.io/web-arqueriamontadaorion/en/gallery.html">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+  <link rel="preload" href="assets/fonts/cinzel-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
   <script>document.documentElement.classList.add('js');</script>
   <script src="assets/js/main.js" defer></script>
@@ -30,9 +31,9 @@
       <div class="header-tools">
         <div class="dropdown" data-dropdown>
           <button class="lang-btn" type="button" aria-expanded="false" aria-controls="lang-menu" data-dropdown-toggle>Idioma <span class="chev"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></span></button>
-          <ul class="dropdown-menu" id="lang-menu" aria-label="Idiomas">
-            <li><span class="lang-option is-active" lang="es">Español</span></li>
-            <li><span class="lang-option is-disabled"><span lang="en">English</span> <small>Próximamente</small></span></li>
+          <ul class="dropdown-menu" id="lang-menu">
+            <li><a class="lang-option is-active" href="galeria.html" hreflang="es" lang="es" aria-current="true">Español</a></li>
+            <li><a class="lang-option" href="en/gallery.html" hreflang="en" lang="en">English</a></li>
           </ul>
         </div>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
@@ -42,14 +43,7 @@
       <nav class="site-nav" id="site-nav" aria-label="Principal">
         <ul>
           <li><a href="index.html">Inicio</a></li>
-          <li class="has-sub dropdown" data-dropdown>
-            <a href="nosotros.html">Nosotros</a>
-            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-nosotros" aria-label="Más secciones de Nosotros" data-dropdown-toggle><span class="chev"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></span></button>
-            <ul class="dropdown-menu" id="sub-nosotros">
-              <li><a href="nosotros.html#quienes-somos">Quiénes somos</a></li>
-              <li><a href="nosotros.html#mision-vision">Misión y visión</a></li>
-            </ul>
-          </li>
+          <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="clases.html">Clases</a></li>
           <li><a href="eventos.html">Eventos</a></li>
           <li><a href="propuestas.html">Propuestas</a></li>
@@ -62,83 +56,89 @@
   </header>
 
   <main id="contenido">
-    <section class="section section--white">
+    <section class="page-hero">
+    <svg class="flag-stripes" viewBox="0 0 230 470" aria-hidden="true">
+      <polygon fill="#78b3e7" points="0,0 36,0 307,470 271,470"/>
+      <polygon fill="#ffffff" points="36,0 84,0 355,470 307,470"/>
+      <polygon fill="#78b3e7" points="84,0 120,0 391,470 355,470"/>
+      <g transform="translate(132 125)">
+        <circle r="13" fill="none" stroke="#f6b40e" stroke-width="5" stroke-dasharray="1.6 2.4"/>
+        <circle r="8" fill="#f6b40e" stroke="#c98a0a" stroke-width=".8"/>
+      </g>
+    </svg>
       <div class="container">
-        <h1 class="display align-right">Galería</h1>
-        <!--
-          Para cambiar o sumar fotos: copiá un bloque <figure> y cambiá
-          href y src (ruta de la foto), alt y el texto del figcaption.
-        -->
-        <div class="gallery">
-          <figure class="gallery-item" data-lightbox-item>
-            <a href="assets/img/galeria/foto-01.jpg"><img src="assets/img/galeria/foto-01.jpg" alt="Jinete al galope tensando el arco en el bosque" loading="lazy"></a>
-            <figcaption class="sr-only">Jinete al galope tensando el arco en el bosque</figcaption>
-          </figure>
-          <figure class="gallery-item" data-lightbox-item>
-            <a href="assets/img/galeria/foto-02.jpg"><img src="assets/img/galeria/foto-02.jpg" alt="Instructor junto a un caballo tordillo con una persona montada" loading="lazy"></a>
-            <figcaption class="sr-only">Instructor junto a un caballo tordillo con una persona montada</figcaption>
-          </figure>
-          <figure class="gallery-item" data-lightbox-item>
-            <a href="assets/img/galeria/foto-03.jpg"><img src="assets/img/galeria/foto-03.jpg" alt="Jinete de campera roja apuntando con el arco al paso" loading="lazy"></a>
-            <figcaption class="sr-only">Jinete de campera roja apuntando con el arco al paso</figcaption>
-          </figure>
-          <figure class="gallery-item" data-lightbox-item>
-            <a href="assets/img/galeria/foto-04.jpg"><img src="assets/img/galeria/foto-04.jpg" alt="Grupo de jinetes levantando sus arcos junto a un blanco" loading="lazy"></a>
-            <figcaption class="sr-only">Grupo de jinetes levantando sus arcos junto a un blanco</figcaption>
-          </figure>
-          <figure class="gallery-item" data-lightbox-item>
-            <a href="assets/img/galeria/foto-05.jpg"><img src="assets/img/galeria/foto-05.jpg" alt="Dos jinetes levantando los arcos en el picadero" loading="lazy"></a>
-            <figcaption class="sr-only">Dos jinetes levantando los arcos en el picadero</figcaption>
-          </figure>
-          <figure class="gallery-item" data-lightbox-item>
-            <a href="assets/img/galeria/foto-06.jpg"><img src="assets/img/galeria/foto-06.jpg" alt="Grupo de alumnos e instructores posando junto a un blanco en el bosque" loading="lazy"></a>
-            <figcaption class="sr-only">Grupo de alumnos e instructores posando junto a un blanco en el bosque</figcaption>
-          </figure>
-          <figure class="gallery-item" data-lightbox-item>
-            <a href="assets/img/galeria/foto-07.jpg"><img src="assets/img/galeria/foto-07.jpg" alt="Alumnos practicando tiro con arco a pie" loading="lazy"></a>
-            <figcaption class="sr-only">Alumnos practicando tiro con arco a pie</figcaption>
-          </figure>
-          <figure class="gallery-item" data-lightbox-item>
-            <a href="assets/img/galeria/foto-08.jpg"><img src="assets/img/galeria/foto-08.jpg" alt="Jinete apuntando con el arco sobre un caballo alazán" loading="lazy"></a>
-            <figcaption class="sr-only">Jinete apuntando con el arco sobre un caballo alazán</figcaption>
-          </figure>
-          <figure class="gallery-item" data-lightbox-item>
-            <a href="assets/img/galeria/foto-09.jpg"><img src="assets/img/galeria/foto-09.jpg" alt="Jinete con sombrero sobre un caballo tordillo con el arco" loading="lazy"></a>
-            <figcaption class="sr-only">Jinete con sombrero sobre un caballo tordillo con el arco</figcaption>
-          </figure>
-          <figure class="gallery-item" data-lightbox-item>
-            <a href="assets/img/galeria/foto-10.jpg"><img src="assets/img/galeria/foto-10.jpg" alt="Alumnos e instructores con sus caballos en el picadero" loading="lazy"></a>
-            <figcaption class="sr-only">Alumnos e instructores con sus caballos en el picadero</figcaption>
-          </figure>
+        <p class="kicker">Fotos</p>
+        <h1 class="title title--page">Galería</h1>
+        <p class="lead">Clases, encuentros y jornadas en la pista. Tocá una foto para verla en grande.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" data-fotos-bloque>
+        <!-- Las fotos se cargan solas desde la carpeta assets/img/galeria/ (ver README) -->
+        <div class="gallery is-loading" data-fotos="galeria" data-por-pagina="24" data-lightbox-group></div>
+        <div class="gallery-more">
+          <button class="btn btn-outline" type="button" data-ver-mas hidden>Ver más fotos</button>
+        </div>
+        <p class="empty-state" data-fotos-vacio hidden>Pronto vamos a sumar fotos. Mientras tanto, miralas en <a href="https://www.instagram.com/arqueriaorion/">Instagram</a>.</p>
+        <noscript><p class="empty-state">Activá JavaScript para ver las fotos, o miralas en <a href="https://www.instagram.com/arqueriaorion/">Instagram</a>.</p></noscript>
+      </div>
+    </section>
+
+    <section class="gold-band cta-band">
+      <div class="container cta-inner">
+        <div>
+          <h2 class="title title--light">Tu foto puede ser la próxima</h2>
+          <p>Vení a conocernos y sumate a una clase.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-light" href="https://wa.me/5492944251674?text=Hola!%20Quiero%20reservar%20una%20clase%20de%20arquer%C3%ADa%20montada."><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-3.9A8.5 8.5 0 1 1 7.6 19.3z"/><path d="M9.2 8.2c-.4 2.9 3.7 7 6.6 6.6l.6-1.6-2-1-1 1c-1.2-.5-2.3-1.6-2.8-2.8l1-1-1-2z"/></svg>Reservá tu clase</a>
+          <a class="btn btn-ghost-light" href="https://www.instagram.com/arqueriaorion/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram</a>
         </div>
       </div>
     </section>
   </main>
 
   <dialog class="lightbox" id="lightbox" aria-label="Imagen ampliada">
-    <button class="lightbox-btn lightbox-close" type="button" data-close aria-label="Cerrar"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <button class="round-btn lightbox-close" type="button" data-close aria-label="Cerrar"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
     <figure>
       <img alt="">
       <figcaption></figcaption>
     </figure>
-    <button class="lightbox-btn lightbox-prev" type="button" data-prev aria-label="Anterior"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
-    <button class="lightbox-btn lightbox-next" type="button" data-next aria-label="Siguiente"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+    <button class="round-btn lightbox-prev" type="button" data-prev aria-label="Anterior"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <button class="round-btn lightbox-next" type="button" data-next aria-label="Siguiente"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
   </dialog>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <a class="footer-brand" href="index.html">
-        <img src="assets/img/logo-jinetes-de-orion.png" alt="" width="64" height="67">
-        <span><strong>Jinetes de Orión</strong>Arquería montada · Bariloche</span>
-      </a>
-      <ul class="footer-contact">
-        <li><a href="https://wa.me/5492944251674"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-3.9A8.5 8.5 0 1 1 7.6 19.3z"/><path d="M9.2 8.2c-.4 2.9 3.7 7 6.6 6.6l.6-1.6-2-1-1 1c-1.2-.5-2.3-1.6-2.8-2.8l1-1-1-2z"/></svg>+54 9 2944 251674</a></li>
-        <li><a href="https://www.instagram.com/arqueriaorion/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@arqueriaorion</a></li>
-        <li><a href="mailto:jinetesdeorion@gmail.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>jinetesdeorion@gmail.com</a></li>
-      </ul>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo-jinetes-de-orion.png" alt="Jinetes de Orión" width="84" height="87" loading="lazy">
+        <p>Escuela de arquería montada en San Carlos de Bariloche, Río Negro, Argentina.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <h2 class="footer-title">Secciones</h2>
+        <ul class="footer-links footer-links--cols">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="clases.html">Clases</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="propuestas.html">Propuestas</a></li>
+          <li><a href="bienestar.html">Bienestar equino</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer-title">Contacto</h2>
+        <ul class="footer-links">
+          <li><a href="https://wa.me/5492944251674"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-3.9A8.5 8.5 0 1 1 7.6 19.3z"/><path d="M9.2 8.2c-.4 2.9 3.7 7 6.6 6.6l.6-1.6-2-1-1 1c-1.2-.5-2.3-1.6-2.8-2.8l1-1-1-2z"/></svg>+54 9 2944 251674</a></li>
+          <li><a href="https://www.instagram.com/arqueriaorion/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@arqueriaorion</a></li>
+          <li><a href="mailto:jinetesdeorion@gmail.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>jinetesdeorion@gmail.com</a></li>
+        </ul>
+      </div>
     </div>
     <div class="container footer-bottom">
-      <p>© <span data-year>2026</span> Jinetes de Orión · San Carlos de Bariloche, Río Negro, Argentina</p>
+      <p>© <span data-year>2026</span> Jinetes de Orión · Arquería montada</p>
     </div>
   </footer>
 </body>

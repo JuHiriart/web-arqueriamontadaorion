@@ -8,13 +8,14 @@
   <meta property="og:title" content="Propuestas — Jinetes de Orión">
   <meta property="og:description" content="Clínica deportiva, desarrollo personal y experiencia cultural: las propuestas de Jinetes de Orión.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://juhiriart.github.io/web-arqueriamontadaorion/assets/img/hero.jpg">
+  <meta property="og:image" content="https://juhiriart.github.io/web-arqueriamontadaorion/assets/img/inicio/slide-1.jpg">
   <meta name="theme-color" content="#ae8020">
+  <link rel="alternate" hreflang="es" href="https://juhiriart.github.io/web-arqueriamontadaorion/propuestas.html">
+  <link rel="alternate" hreflang="en" href="https://juhiriart.github.io/web-arqueriamontadaorion/en/proposals.html">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+  <link rel="preload" href="assets/fonts/cinzel-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
   <script>document.documentElement.classList.add('js');</script>
   <script src="assets/js/main.js" defer></script>
@@ -30,9 +31,9 @@
       <div class="header-tools">
         <div class="dropdown" data-dropdown>
           <button class="lang-btn" type="button" aria-expanded="false" aria-controls="lang-menu" data-dropdown-toggle>Idioma <span class="chev"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></span></button>
-          <ul class="dropdown-menu" id="lang-menu" aria-label="Idiomas">
-            <li><span class="lang-option is-active" lang="es">Español</span></li>
-            <li><span class="lang-option is-disabled"><span lang="en">English</span> <small>Próximamente</small></span></li>
+          <ul class="dropdown-menu" id="lang-menu">
+            <li><a class="lang-option is-active" href="propuestas.html" hreflang="es" lang="es" aria-current="true">Español</a></li>
+            <li><a class="lang-option" href="en/proposals.html" hreflang="en" lang="en">English</a></li>
           </ul>
         </div>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
@@ -42,14 +43,7 @@
       <nav class="site-nav" id="site-nav" aria-label="Principal">
         <ul>
           <li><a href="index.html">Inicio</a></li>
-          <li class="has-sub dropdown" data-dropdown>
-            <a href="nosotros.html">Nosotros</a>
-            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-nosotros" aria-label="Más secciones de Nosotros" data-dropdown-toggle><span class="chev"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></span></button>
-            <ul class="dropdown-menu" id="sub-nosotros">
-              <li><a href="nosotros.html#quienes-somos">Quiénes somos</a></li>
-              <li><a href="nosotros.html#mision-vision">Misión y visión</a></li>
-            </ul>
-          </li>
+          <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="clases.html">Clases</a></li>
           <li><a href="eventos.html">Eventos</a></li>
           <li><a href="propuestas.html" aria-current="page">Propuestas</a></li>
@@ -62,44 +56,96 @@
   </header>
 
   <main id="contenido">
-    <section class="section">
+    <section class="page-hero">
+    <svg class="flag-stripes" viewBox="0 0 230 470" aria-hidden="true">
+      <polygon fill="#78b3e7" points="0,0 36,0 307,470 271,470"/>
+      <polygon fill="#ffffff" points="36,0 84,0 355,470 307,470"/>
+      <polygon fill="#78b3e7" points="84,0 120,0 391,470 355,470"/>
+      <g transform="translate(132 125)">
+        <circle r="13" fill="none" stroke="#f6b40e" stroke-width="5" stroke-dasharray="1.6 2.4"/>
+        <circle r="8" fill="#f6b40e" stroke="#c98a0a" stroke-width=".8"/>
+      </g>
+    </svg>
       <div class="container">
-        <h1 class="display align-right">Propuestas</h1>
-        <div class="propuestas">
-          <article class="propuesta">
-            <h2>Clínica deportiva</h2>
+        <p class="kicker">Experiencias</p>
+        <h1 class="title title--page">Propuestas</h1>
+        <p class="lead">Además de las clases regulares, diseñamos encuentros con objetivos específicos: deportivos, personales y culturales.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container propuestas">
+        <article class="propuesta">
+          <img src="assets/img/propuesta-clinica.jpg" alt="Jinete al galope tensando el arco en el bosque" width="1110" height="1051" loading="lazy">
+          <div class="propuesta-body">
+            <h2 class="title title--card">Clínica deportiva</h2>
             <p>Dos o tres jornadas intensivas para quienes quieren iniciarse en la arquería montada desde una perspectiva técnica y deportiva.</p>
             <p>Diseñado para que, desde el nivel en el que te encuentres, construyas las bases necesarias para comenzar a entrenar con propósito.</p>
-          </article>
-          <article class="propuesta">
-            <h2>Desarrollo personal</h2>
+          </div>
+        </article>
+        <article class="propuesta">
+          <img src="assets/img/propuesta-desarrollo.jpg" alt="Dos jinetes chocando las manos a caballo" width="1050" height="1400" loading="lazy">
+          <div class="propuesta-body">
+            <h2 class="title title--card">Desarrollo personal</h2>
             <p>Complementamos el trabajo de terapeutas equinos, psicólogos y coaches ontológicos brindando la actividad con fines de desarrollo personal.</p>
-            <p>Así nació <strong><em>Khiimori,</em></strong> un encuentro donde el caballo como reflejo de nuestra presencia y el arco como proyección de la voluntad se convierten en los grandes maestros del viaje.</p>
-          </article>
-          <article class="propuesta">
-            <h2>Experiencia cultural</h2>
+            <p>Así nació <strong><em>Khiimori</em></strong>, un encuentro donde el caballo como reflejo de nuestra presencia y el arco como proyección de la voluntad se convierten en los grandes maestros del viaje.</p>
+          </div>
+        </article>
+        <article class="propuesta">
+          <img src="assets/img/propuesta-cultural.jpg" alt="Grupo de alumnos e instructores posando junto a un blanco en el bosque" width="1400" height="933" loading="lazy">
+          <div class="propuesta-body">
+            <h2 class="title title--card">Experiencia cultural</h2>
             <p>En un entorno natural único como el que ofrece el bosque patagónico, desarrollamos la propuesta ideal para quienes buscan probar una actividad diferente.</p>
             <p>Aquí el foco está puesto no solo en la práctica, sino en el recorrido histórico y cultural de la arquería y la arquería montada.</p>
-          </article>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="gold-band cta-band">
+      <div class="container cta-inner">
+        <div>
+          <h2 class="title title--light">Viví la experiencia</h2>
+          <p>Mirá las próximas clínicas y encuentros, o consultanos por una fecha para tu grupo.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-light" href="eventos.html">Próximas fechas</a>
+          <a class="btn btn-ghost-light" href="https://wa.me/5492944251674"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-3.9A8.5 8.5 0 1 1 7.6 19.3z"/><path d="M9.2 8.2c-.4 2.9 3.7 7 6.6 6.6l.6-1.6-2-1-1 1c-1.2-.5-2.3-1.6-2.8-2.8l1-1-1-2z"/></svg>Consultar</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <a class="footer-brand" href="index.html">
-        <img src="assets/img/logo-jinetes-de-orion.png" alt="" width="64" height="67">
-        <span><strong>Jinetes de Orión</strong>Arquería montada · Bariloche</span>
-      </a>
-      <ul class="footer-contact">
-        <li><a href="https://wa.me/5492944251674"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-3.9A8.5 8.5 0 1 1 7.6 19.3z"/><path d="M9.2 8.2c-.4 2.9 3.7 7 6.6 6.6l.6-1.6-2-1-1 1c-1.2-.5-2.3-1.6-2.8-2.8l1-1-1-2z"/></svg>+54 9 2944 251674</a></li>
-        <li><a href="https://www.instagram.com/arqueriaorion/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@arqueriaorion</a></li>
-        <li><a href="mailto:jinetesdeorion@gmail.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>jinetesdeorion@gmail.com</a></li>
-      </ul>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo-jinetes-de-orion.png" alt="Jinetes de Orión" width="84" height="87" loading="lazy">
+        <p>Escuela de arquería montada en San Carlos de Bariloche, Río Negro, Argentina.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <h2 class="footer-title">Secciones</h2>
+        <ul class="footer-links footer-links--cols">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="clases.html">Clases</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="propuestas.html">Propuestas</a></li>
+          <li><a href="bienestar.html">Bienestar equino</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer-title">Contacto</h2>
+        <ul class="footer-links">
+          <li><a href="https://wa.me/5492944251674"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-3.9A8.5 8.5 0 1 1 7.6 19.3z"/><path d="M9.2 8.2c-.4 2.9 3.7 7 6.6 6.6l.6-1.6-2-1-1 1c-1.2-.5-2.3-1.6-2.8-2.8l1-1-1-2z"/></svg>+54 9 2944 251674</a></li>
+          <li><a href="https://www.instagram.com/arqueriaorion/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@arqueriaorion</a></li>
+          <li><a href="mailto:jinetesdeorion@gmail.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>jinetesdeorion@gmail.com</a></li>
+        </ul>
+      </div>
     </div>
     <div class="container footer-bottom">
-      <p>© <span data-year>2026</span> Jinetes de Orión · San Carlos de Bariloche, Río Negro, Argentina</p>
+      <p>© <span data-year>2026</span> Jinetes de Orión · Arquería montada</p>
     </div>
   </footer>
 </body>

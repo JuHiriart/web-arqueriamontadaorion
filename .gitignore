@@ -6,3 +6,7 @@ desktop.ini
 # Editores
 .vscode/
 .idea/
+
+# Se generan solos al publicar (scripts/preparar_imagenes.py)
+datos/
+assets/img/miniaturas/

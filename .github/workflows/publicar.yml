@@ -1,0 +1,53 @@
+# Publica el sitio en GitHub Pages cada vez que se suben cambios a "main".
+# Antes de publicar, arma las listas de fotos de la galería y de eventos
+# (ver scripts/preparar_imagenes.py).
+#
+# Requisito (una sola vez): Settings → Pages → Build and deployment → Source: "GitHub Actions".
+
+name: Publicar sitio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Optimizar fotos y armar las listas de galería y eventos
+        run: |
+          pip install pillow
+          python scripts/preparar_imagenes.py
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Subir el sitio
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4
