@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Prepara las fotos de la galería y de eventos para publicar el sitio.
+Prepara las fotos del inicio, la galería y eventos para publicar el sitio.
 
 GitHub Actions lo ejecuta solo en cada publicación (ver .github/workflows/publicar.yml),
 así que no hace falta correrlo a mano. Para cada carpeta de CARPETAS:
@@ -9,8 +9,7 @@ así que no hace falta correrlo a mano. Para cada carpeta de CARPETAS:
   - genera miniaturas livianas para las grillas y los carruseles,
   - escribe datos/<carpeta>.json con la lista de fotos que leen las páginas.
 
-Las fotos se ordenan por nombre de archivo. Si junto a una foto hay un .txt con el mismo
-nombre (foto.txt, y opcionalmente foto.en.txt para inglés), ese texto se usa como descripción.
+Las fotos se ordenan por nombre de archivo.
 """
 import json
 import re
@@ -31,10 +30,6 @@ def orden_natural(nombre):
 
 def ruta_web(ruta):
     return ruta.relative_to(RAIZ).as_posix()
-
-
-def leer_texto(ruta):
-    return ruta.read_text(encoding="utf-8-sig").strip() if ruta.exists() else None
 
 
 def guardar_achicada(imagen, ruta):
@@ -70,14 +65,7 @@ def preparar(carpeta):
             destino = miniaturas / (foto.name + ".jpg")
             mini.save(destino, "JPEG", quality=80, optimize=True, progressive=True)
 
-        item = {"src": ruta_web(foto), "mini": ruta_web(destino), "ancho": ancho, "alto": alto}
-        texto = leer_texto(foto.with_suffix(".txt"))
-        texto_en = leer_texto(foto.with_suffix(".en.txt"))
-        if texto:
-            item["texto"] = texto
-        if texto_en:
-            item["texto_en"] = texto_en
-        lista.append(item)
+        lista.append({"src": ruta_web(foto), "mini": ruta_web(destino), "ancho": ancho, "alto": alto})
 
     salida = RAIZ / "datos" / f"{carpeta}.json"
     salida.parent.mkdir(exist_ok=True)

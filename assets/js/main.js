@@ -18,8 +18,6 @@
       showPhoto: (i, n) => `Ver foto ${i} de ${n}`,
       slide: 'diapositiva',
       slideOf: (i, n) => `${i} de ${n}`,
-      photo: 'Foto de Jinetes de Orión',
-      flyer: 'Flyer de próxima fecha',
     },
     en: {
       openMenu: 'Open menu',
@@ -27,8 +25,6 @@
       showPhoto: (i, n) => `Show photo ${i} of ${n}`,
       slide: 'slide',
       slideOf: (i, n) => `${i} of ${n}`,
-      photo: 'Jinetes de Orión photo',
-      flyer: 'Upcoming date flyer',
     },
   }[LANG];
 
@@ -97,15 +93,12 @@
      Las imágenes de assets/img/<carpeta>/ se listan, en orden:
        1. del listado de la carpeta (servidor local, siempre al día),
        2. de datos/<carpeta>.json (lo genera GitHub Actions al publicar),
-       3. de la API de GitHub (por si el sitio se publicó sin ese paso).
-     Un .txt con el mismo nombre que la foto (y .en.txt en inglés) es su descripción. */
+       3. de la API de GitHub (por si el sitio se publicó sin ese paso). */
   const IMG_RE = /\.(jpe?g|png|webp|gif|avif)$/i;
   const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
   const fileName = (url) => decodeURIComponent(new URL(url).pathname.split('/').pop());
-  const textUrls = (src) => {
-    const base = src.replace(/\.[^./]+$/, '');
-    return LANG === 'en' ? [`${base}.en.txt`, `${base}.txt`] : [`${base}.txt`];
-  };
+
+  const toItems = (files) => files.filter((f) => IMG_RE.test(f)).map((src) => ({ src, mini: src }));
 
   async function fromDirectoryListing(folder) {
     const dir = new URL(`assets/img/${folder}/`, SITE_ROOT);
@@ -120,7 +113,7 @@
         files.add(url.origin + url.pathname);
       }
     });
-    return withTexts([...files]);
+    return toItems([...files]);
   }
 
   async function fromManifest(folder) {
@@ -132,7 +125,6 @@
       mini: new URL(f.mini || f.src, SITE_ROOT).href,
       ancho: f.ancho,
       alto: f.alto,
-      texto: (LANG === 'en' && f.texto_en) || f.texto || '',
     }));
   }
 
@@ -143,29 +135,7 @@
     const files = (await res.json())
       .filter((f) => f.type === 'file')
       .map((f) => new URL(f.path, SITE_ROOT).href);
-    return withTexts(files);
-  }
-
-  // Arma la lista de imágenes y lee las descripciones .txt que las acompañan
-  async function withTexts(files) {
-    const texts = new Set(files.filter((f) => /\.txt$/i.test(f)));
-    return Promise.all(
-      files
-        .filter((f) => IMG_RE.test(f))
-        .map(async (src) => {
-          const txt = textUrls(src).find((u) => texts.has(u));
-          let texto = '';
-          if (txt) {
-            try {
-              const res = await fetch(txt);
-              if (res.ok) texto = (await res.text()).trim();
-            } catch (err) {
-              /* sin descripción */
-            }
-          }
-          return { src, mini: src, texto };
-        })
-    );
+    return toItems(files);
   }
 
   const listCache = {};
@@ -189,20 +159,6 @@
     return listCache[folder];
   }
 
-  // Descripción: el .txt si existe; si no, el nombre del archivo cuando es descriptivo
-  function describe(item, base, index) {
-    if (item.texto) return item.texto;
-    const name = fileName(item.src)
-      .replace(/\.[^.]+$/, '')
-      .replace(/[_-]+/g, ' ')
-      .trim();
-    const words = name.split(/\s+/).filter((w) => /^[a-záéíóúñü]{3,}$/i.test(w));
-    if (words.length >= 2 && !/^(img|dsc|mg|whatsapp|image|imagen|foto|photo|pxl|slide)$/i.test(words[0])) {
-      return name.charAt(0).toUpperCase() + name.slice(1);
-    }
-    return `${base} ${index + 1}`;
-  }
-
   /* --- Slideshow de fotos (inicio) -------------------------------------- */
   function createSlide(item, index, total) {
     const slide = document.createElement('figure');
@@ -213,19 +169,13 @@
 
     const img = document.createElement('img');
     img.src = item.src;
-    img.alt = describe(item, T.photo, index);
+    img.alt = '';
     if (index > 0) img.loading = 'lazy';
     if (item.ancho && item.alto) {
       img.width = item.ancho;
       img.height = item.alto;
     }
     slide.appendChild(img);
-
-    if (item.texto) {
-      const caption = document.createElement('figcaption');
-      caption.textContent = item.texto;
-      slide.appendChild(caption);
-    }
     return slide;
   }
 
@@ -332,7 +282,7 @@
   });
 
   /* --- Galería y carruseles que se llenan desde una carpeta -------------- */
-  function createFigure(item, index, base, className) {
+  function createFigure(item, className) {
     const figure = document.createElement('figure');
     figure.className = className;
     figure.setAttribute('data-lightbox-item', '');
@@ -342,7 +292,7 @@
 
     const img = document.createElement('img');
     img.src = item.mini;
-    img.alt = describe(item, base, index);
+    img.alt = '';
     img.loading = 'lazy';
     img.decoding = 'async';
     if (item.ancho && item.alto) {
@@ -350,12 +300,8 @@
       img.height = item.alto;
     }
 
-    const caption = document.createElement('figcaption');
-    caption.className = 'sr-only';
-    caption.textContent = img.alt;
-
     link.appendChild(img);
-    figure.append(link, caption);
+    figure.appendChild(link);
     return figure;
   }
 
@@ -372,7 +318,6 @@
     const block = container.closest('[data-fotos-bloque]') || container.parentElement;
     const empty = block.querySelector('[data-fotos-vacio]');
     const more = block.querySelector('[data-ver-mas]');
-    const base = folder === 'eventos' ? T.flyer : T.photo;
     const className = container.dataset.clase || 'gallery-item';
 
     let items = await listImages(folder);
@@ -393,8 +338,8 @@
 
     const showMore = () => {
       const fragment = document.createDocumentFragment();
-      items.slice(shown, shown + perPage).forEach((item, k) => {
-        fragment.appendChild(createFigure(item, shown + k, base, className));
+      items.slice(shown, shown + perPage).forEach((item) => {
+        fragment.appendChild(createFigure(item, className));
       });
       container.appendChild(fragment);
       shown = Math.min(items.length, shown + perPage);
@@ -412,18 +357,12 @@
 
   if (lightbox && typeof lightbox.showModal === 'function') {
     const img = lightbox.querySelector('img');
-    const caption = lightbox.querySelector('figcaption');
     let list = [];
     let current = 0;
 
     const show = (index) => {
       current = (index + list.length) % list.length;
-      const item = list[current];
-      const thumb = item.querySelector('img');
-      const text = item.querySelector('figcaption');
-      img.src = item.querySelector('a').href;
-      img.alt = thumb ? thumb.alt : '';
-      caption.textContent = text ? text.textContent : '';
+      img.src = list[current].querySelector('a').href;
     };
 
     // Delegación: funciona también con las fotos que se agregan después

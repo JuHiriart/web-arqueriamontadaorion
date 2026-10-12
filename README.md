@@ -17,22 +17,9 @@ Estas fotos se cargan solas desde su carpeta. No hace falta tocar ningún HTML.
 1. Copiá la foto en la carpeta (también se puede hacer desde la web de GitHub: entrar a la carpeta → **Add file → Upload files**).
 2. Subí los cambios a `main`. En uno o dos minutos aparece en el sitio.
 
-Para sacar una foto, borrala de la carpeta (y su `.txt`, si tiene).
+Para sacar una foto, borrala de la carpeta.
 
-### Descripciones de las fotos
-
-Cada foto puede tener un archivo de texto **con el mismo nombre** al lado:
-
-```
-assets/img/eventos/2-cordoba-curso-inicial.jpg
-assets/img/eventos/2-cordoba-curso-inicial.txt      ← descripción en español
-assets/img/eventos/2-cordoba-curso-inicial.en.txt   ← descripción en inglés (opcional)
-```
-
-- **Inicio:** el texto aparece como leyenda sobre la foto ("Tiro con arco a caballo en el bosque").
-- **Galería y eventos:** el texto se lee en el visor ampliado y lo usan los lectores de pantalla.
-- Si no hay `.txt`, la foto igual aparece: sin leyenda y con una descripción genérica ("Foto de Jinetes de Orión 12").
-- Se editan con cualquier editor de texto (Bloc de notas, VS Code). Guardar en UTF-8 para que salgan bien las tildes.
+Las fotos se muestran sin descripciones ni leyendas.
 
 ### Otros detalles
 

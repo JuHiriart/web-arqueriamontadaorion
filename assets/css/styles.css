@@ -692,18 +692,6 @@ a.lang-option:hover {
   background: linear-gradient(to top, rgba(20, 24, 36, 0.55), transparent 45%);
 }
 
-.slide figcaption {
-  position: absolute;
-  bottom: clamp(1.25rem, 3vw, 2.25rem);
-  left: max(var(--gutter), (100% - var(--container)) / 2);
-  z-index: 1;
-  max-width: calc(100% - 2 * var(--gutter) - 140px);
-  color: #fff;
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
-  font-weight: 700;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
-}
-
 .slideshow-controls {
   position: absolute;
   bottom: clamp(1rem, 2.6vw, 2rem);
@@ -1116,8 +1104,6 @@ a.card:hover {
 }
 
 .carousel-track {
-  /* Contiene a los textos ocultos (.sr-only) de cada foto: sin esto se salen
-     del recorte del carrusel y generan scroll lateral en celulares */
   position: relative;
   display: flex;
   gap: 1rem;
@@ -1261,18 +1247,13 @@ a.card:hover {
   object-fit: contain;
 }
 
-.lightbox figcaption {
-  margin-top: 0.75rem;
-  text-align: center;
-}
-
 .lightbox .round-btn {
   position: absolute;
 }
 
 .lightbox-close { top: -64px; right: 0; }
-.lightbox-prev { top: calc(50% - 44px); left: -26px; }
-.lightbox-next { top: calc(50% - 44px); right: -26px; }
+.lightbox-prev { top: calc(50% - 26px); left: -26px; }
+.lightbox-next { top: calc(50% - 26px); right: -26px; }
 
 /* --- Bienestar --------------------------------------------------------------- */
 .bienestar-band {
@@ -1542,11 +1523,6 @@ a.contact-card:hover {
 
   .carousel--flyers { --item-w: 80%; }
   .carousel--photos { --item-w: 62%; }
-
-  .slide figcaption {
-    max-width: calc(100% - 2 * var(--gutter));
-    bottom: 4.25rem;
-  }
 
   .slideshow-controls {
     right: 50%;
